@@ -1,4 +1,4 @@
-# Java Spring Boot Learning Repository 🚀
+# Java Spring Boot Learning Repository 
 
 A comprehensive learning repository containing Java Spring Boot projects, Servlet examples, JDBC implementation, JPA, and Hibernate demonstrations.
 
