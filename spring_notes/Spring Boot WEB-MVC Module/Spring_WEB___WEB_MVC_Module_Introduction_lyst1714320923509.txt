@@ -5,12 +5,11 @@
 	-> NOTE :-
 		= Spring WEB-MVC Module is the part of Spring WEB Module. The Spring WEB Module provides the basic web-oriented integration features that the Spring WEB-MVC Module needs to operate
 		
-=====================================================================================================================
+================================================================================================================================================================
 
 => Spring WEB-MVC Module :-
 	-> The Spring WEB-MVC Module is used to build web applications following the Model-View-Controller (MVC) architectural/design pattern
 	-> It is used to develop flexible web applications in an organized manner
-	
 	-> Architecture of Spring WEB-MVC Application :-
 		
 	-> Components of Spring WEB-MVC Module :-
