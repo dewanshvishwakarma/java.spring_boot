@@ -26,6 +26,276 @@
 		= Diagram
 	-> Hierarchy of DispatcherServlet (class) :-
 		= Diagram
+
+Think of DispatcherServlet as the main entry point / front controller of Spring MVC.
+
+Its main job is:
+
+Receive an incoming HTTP request and dispatch it to the appropriate controller.
+
+1. Why do we need DispatcherServlet?
+
+Suppose your application has many controllers:
+
+StudentController
+EmployeeController
+ProductController
+OrderController
+
+A client sends:
+GET /students
+Who decides which controller should handle this request?
+DispatcherServlet
+It receives the request and finds the appropriate controller method.
+
+2. Request Flow
+Suppose we have:
+@Controller
+public class StudentController {
+
+    @GetMapping("/students")
+    public String getStudents() {
+        return "students";
+    }
+}
+The important point is:
+The request does NOT directly go from browser to StudentController.
+It first comes to the DispatcherServlet.
+
+3. What is DispatcherServlet?
+Interview definition 
+
+DispatcherServlet is the Front Controller of Spring MVC. It receives all incoming HTTP requests and dispatches them to the appropriate controller based on the request URL and HTTP method.
+
+Remember these keywords:
+
+DispatcherServlet
+      ↓
+Front Controller
+      ↓
+Receives Request
+      ↓
+Finds Controller
+      ↓
+Dispatches Request
+4. Why is it called "Dispatcher"?
+
+Because it dispatches the request to the appropriate handler.
+
+For example:
+
+GET /students
+       ↓
+DispatcherServlet
+       ↓
+StudentController → getStudents()
+
+GET /products
+       ↓
+DispatcherServlet
+       ↓
+ProductController → getProducts()
+
+POST /students
+       ↓
+DispatcherServlet
+       ↓
+StudentController → addStudent()
+
+So you can think:
+
+DispatcherServlet = traffic controller 🚦
+
+It receives the traffic and sends it to the correct destination.
+
+5. What happens internally?
+This is important for understanding Spring MVC.
+
+Suppose:
+
+GET /student/101
+Step 1 — Request arrives
+
+The request reaches:
+
+DispatcherServlet
+Step 2 — Find the appropriate handler
+
+Spring looks for a controller method matching:
+
+/student/101
+
+For example:
+
+@GetMapping("/student/{id}")
+public Student getStudent(@PathVariable int id) {
+    //...
+}
+Step 3 — Controller method executes
+
+Spring invokes:
+
+getStudent(101)
+Step 4 — Controller produces result
+
+It may return:
+
+Student object
+
+or:
+
+View name
+Step 5 — Response is sent
+
+Spring sends the appropriate HTTP response back to the client.
+
+6. DispatcherServlet doesn't do everything itself
+
+This is a very important concept.
+
+DispatcherServlet works with several Spring MVC components.
+
+A simplified flow is:
+
+                 HTTP Request
+                      ↓
+              DispatcherServlet
+                      ↓
+              HandlerMapping
+                      ↓
+             Controller Method
+                      ↓
+               Service Layer
+                      ↓
+              Repository/DB
+                      ↓
+                 Controller
+                      ↓
+            View / JSON Response
+                      ↓
+              DispatcherServlet
+                      ↓
+                HTTP Response
+
+We'll study these components one by one.
+
+7. Important components
+
+You don't need to memorize all of them yet, but know their purpose.
+
+DispatcherServlet
+
+Receives and coordinates the request.
+
+HandlerMapping
+
+Finds:
+
+"Which controller/method should handle this request?"
+
+Example:
+
+/students → StudentController.getStudents()
+Controller
+
+Actually handles the application request.
+
+@GetMapping("/students")
+public String getStudents() {
+    return "students";
+}
+ViewResolver
+
+For traditional MVC, helps find the appropriate View.
+
+For example:
+
+"students"
+    ↓
+students.html
+HttpMessageConverter
+
+For REST APIs, converts between Java objects and formats such as JSON.
+
+For example:
+
+Java Student Object
+        ↓
+Jackson
+        ↓
+JSON
+8. Do we create DispatcherServlet manually?
+
+In Spring Boot, normally NO.
+
+When you add:
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+
+Spring Boot automatically configures the MVC infrastructure, including the DispatcherServlet.
+
+That's one of the major benefits of Spring Boot.
+
+🧠 Remember this diagram
+
+This is the one I want you to remember:
+
+              CLIENT
+                 │
+                 │ HTTP Request
+                 ↓
+        ┌──────────────────┐
+        │ DispatcherServlet│
+        └──────────────────┘
+                 │
+                 ↓
+          HandlerMapping
+                 │
+                 ↓
+            Controller
+                 │
+                 ↓
+             Service
+                 │
+                 ↓
+           Repository
+                 │
+                 ↓
+            Database
+
+Then the result comes back:
+
+Database
+   ↓
+Repository
+   ↓
+Service
+   ↓
+Controller
+   ↓
+DispatcherServlet
+   ↓
+Client
+Interview questions you should be able to answer
+
+Q1. What is DispatcherServlet?
+
+DispatcherServlet is the Front Controller of Spring MVC that receives incoming HTTP requests and dispatches them to the appropriate controller.
+
+Q2. Why is DispatcherServlet called Front Controller?
+
+Because it acts as the central entry point for requests in a Spring MVC application.
+
+Q3. Does Spring Boot create DispatcherServlet manually?
+
+No. Spring Boot automatically configures and registers DispatcherServlet when Spring Web is included.
+
+Q4. What does HandlerMapping do?
+
+It identifies the appropriate controller and handler method for an incoming request.
 		
 -----------------------------------------------------------------------------------
 
