@@ -16,6 +16,7 @@ public class user {
 	private String city;
 	
 //	generate the getter and setter
+	//to get and set the user data
 	public long getId() {
 		return id;
 	}
