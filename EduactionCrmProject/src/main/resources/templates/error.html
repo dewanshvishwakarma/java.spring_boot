@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registration Error | DV Programming</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            background: #f4f7fb;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: linear-gradient(135deg, #0d6efd, #084298);
+        }
+
+        .navbar-brand img {
+            object-fit: contain;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        /* Error Section */
+        .error-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 15px;
+        }
+
+        .error-card {
+            background: white;
+            width: 100%;
+            max-width: 550px;
+            padding: 45px 35px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Error Icon */
+        .error-icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            background: #fff0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .error-icon i {
+            font-size: 48px;
+            color: #dc3545;
+        }
+
+        .error-card h2 {
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .error-card p {
+            color: #6c757d;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .error-message {
+            background: #fff5f5;
+            border: 1px solid #f5c2c7;
+            color: #842029;
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .btn-primary {
+            padding: 11px 25px;
+            border-radius: 10px;
+        }
+
+        .btn-outline-secondary {
+            padding: 11px 25px;
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #212529;
+            color: white;
+            padding: 30px 0;
+        }
+
+        footer a {
+            color: #adb5bd;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .social-icons a {
+            font-size: 20px;
+            margin: 0 8px;
+        }
+
+        @media (max-width: 576px) {
+            .error-card {
+                padding: 35px 20px;
+            }
+
+            .error-card h2 {
+                font-size: 25px;
+            }
+
+            .button-group {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .button-group a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+            <a class="navbar-brand text-white" href="/index">
+                <img src="download (11).png"
+                    height="50"
+                    width="60"
+                    alt="DV Programming">
+                dv programing
+            </a>
+
+            <button class="navbar-toggler bg-light"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/index">
+                            <i class="bi bi-house-door"></i> Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">
+                            Link
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/login">
+                            <i class="bi bi-box-arrow-in-right"></i> Login
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/register">
+                            <i class="bi bi-person-plus"></i> Register
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Error Section -->
+    <section class="error-section">
+
+        <div class="error-card">
+
+            <!-- Error Icon -->
+            <div class="error-icon">
+                <i class="bi bi-x-circle-fill"></i>
+            </div>
+
+            <h2>Registration Failed</h2>
+
+            <p>
+                Sorry, we couldn't complete your registration.
+                Please check your information and try again.
+            </p>
+
+            <!-- Error Message -->
+            <div class="error-message">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                Registration failed. Email may already be registered.
+            </div>
+
+            <!-- Buttons -->
+            <div class="button-group d-flex justify-content-center gap-3">
+
+                <a href="/register" class="btn btn-primary">
+                    <i class="bi bi-arrow-repeat me-1"></i>
+                    Try Again
+                </a>
+
+                <a href="/index" class="btn btn-outline-secondary">
+                    <i class="bi bi-house me-1"></i>
+                    Go Home
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="container text-center">
+
+            <h5 class="mb-2">dv programing</h5>
+
+            <p class="text-secondary mb-3">
+                Learn. Build. Grow.
+            </p>
+
+            <div class="social-icons mb-3">
+
+                <a href="#">
+                    <i class="bi bi-facebook"></i>
+                </a>
+
+                <a href="#">
+                    <i class="bi bi-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+
+                <a href="#">
+                    <i class="bi bi-github"></i>
+                </a>
+
+            </div>
+
+            <p class="text-secondary mb-0">
+                © 2026 DV Programming. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+
+</html>

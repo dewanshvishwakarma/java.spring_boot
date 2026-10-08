@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeLeaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Register - DV Programming</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg bg-primary">
+
+            <div class="container-fluid">
+
+                <!-- Logo / Brand -->
+                <a class="navbar-brand text-white" href="/index">
+
+                    <img src="download (11).png"
+                        height="50px"
+                        width="60px"
+                        alt="DV Programming">
+
+                    dv programing
+
+                </a>
+
+                <!-- Mobile Navbar Button -->
+                <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+
+                <div class="collapse navbar-collapse"
+                    id="navbarSupportedContent">
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <!-- Home -->
+                        <li class="nav-item">
+                            <a class="nav-link active text-white"
+                                aria-current="page"
+                                href="/index">
+                                Home
+                            </a>
+                        </li>
+
+                        <!-- Link -->
+                        <li class="nav-item">
+                            <a class="nav-link text-white"
+                                href="#">
+                                Link
+                            </a>
+                        </li>
+
+                        <!-- More Dropdown -->
+                        <li class="nav-item dropdown">
+
+                            <a class="nav-link dropdown-toggle text-white"
+                                href="#"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+
+                                more
+
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        online batch details
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        courses
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        contact us
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+                    </ul>
+
+
+                    <!-- Login & Register -->
+                    <button type="button"
+                        class="btn btn-primary"
+                        style="margin-left: 5px;">
+
+                        <a style="color: white; text-decoration: none;"
+                            href="/login">
+                            Login
+                        </a>
+
+                    </button>
+
+
+                    <button type="button"
+                        class="btn btn-primary"
+                        style="margin: 5px;">
+
+                        <a style="color: white; text-decoration: none;"
+                            href="/register">
+                            Register
+                        </a>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= REGISTER FORM ================= -->
+
+    <main>
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+
+                <div class="col-md-6 col-lg-5">
+
+                    <div class="card shadow mt-5 mb-5">
+
+                        <div class="card-body p-4">
+
+                            <h2 class="text-center mb-4">
+                                Create Account
+                            </h2>
+
+                            <p class="text-center text-muted mb-4">
+                                Register with DV Programming
+                            </p>
+
+
+                            <!-- Register Form -->
+                            <form action="rform" method="post">
+								
+								
+								<div th:if="${sucess}" class="alert alert-success" role="alert">
+								  		<span th:text="${sucess}"></span>
+								</div>
+								
+
+                                <!-- Name -->
+                                <div class="mb-3">
+
+                                    <label for="name"
+                                        class="form-label">
+                                        Name
+                                    </label>
+
+                                    <input type="text"
+                                        class="form-control"
+                                        id="name"
+                                        name="name"
+                                        placeholder="Enter your name"
+                                        required>
+
+                                </div>
+
+
+                                <!-- Email -->
+                                <div class="mb-3">
+
+                                    <label for="email"
+                                        class="form-label">
+                                        Email
+                                    </label>
+
+                                    <input type="text"
+                                        class="form-control"
+                                        id="email"
+                                        name="email"
+                                        placeholder="Enter your email"
+                                        required>
+
+                                </div>
+
+
+                                <!-- Password -->
+                                <div class="mb-3">
+
+                                    <label for="password"
+                                        class="form-label">
+                                        Password
+                                    </label>
+
+                                    <input type="text"
+                                        class="form-control"
+                                        id="password"
+                                        name="password"
+                                        placeholder="Enter your password"
+                                        required>
+
+                                </div>
+
+
+                                <!-- Phone Number -->
+                                <div class="mb-3">
+
+                                    <label for="phone"
+                                        class="form-label">
+                                        Phone Number
+                                    </label>
+
+                                    <input type="text"
+                                        class="form-control"
+                                        id="phone"
+                                        name="phone"
+                                        placeholder="Enter your phone number"
+                                        required>
+
+                                </div>
+
+
+                                <!-- City -->
+                                <div class="mb-3">
+
+                                    <label for="city"
+                                        class="form-label">
+                                        City
+                                    </label>
+
+                                    <input type="text"
+                                        class="form-control"
+                                        id="city"
+                                        name="city"
+                                        placeholder="Enter your city"
+                                        required>
+
+                                </div>
+
+
+                                <!-- Register Button -->
+                                <div class="d-grid">
+
+                                    <button type="submit"
+                                        class="btn btn-primary">
+                                        Register
+                                    </button>
+
+                                </div>
+
+                            </form>
+
+
+                            <!-- Login Link -->
+                            <p class="text-center mt-3">
+
+                                Already have an account?
+
+                                <a href="/login">
+                                    Login
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <footer class="bg-dark py-5"
+        data-bs-theme="dark">
+
+        <div class="container text-center">
+
+            <!-- Social Icons -->
+            <div class="mb-4">
+
+                <a href="#"
+                    class="text-white mx-3 fs-4">
+                    <i class="bi bi-facebook"></i>
+                </a>
+
+                <a href="#"
+                    class="text-white mx-3 fs-4">
+                    <i class="bi bi-twitter-x"></i>
+                </a>
+
+                <a href="#"
+                    class="text-white mx-3 fs-4">
+                    <i class="bi bi-instagram"></i>
+                </a>
+
+                <a href="#"
+                    class="text-white mx-3 fs-4">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+
+            </div>
+
+
+            <!-- Footer Links -->
+            <div class="mb-4">
+
+                <a href="index.html"
+                    class="text-muted text-decoration-none mx-2">
+                    Home
+                </a>
+
+                <a href="#"
+                    class="text-muted text-decoration-none mx-2">
+                    Privacy Policy
+                </a>
+
+                <a href="#"
+                    class="text-muted text-decoration-none mx-2">
+                    Terms of Service
+                </a>
+
+            </div>
+
+
+            <p class="text-muted small mb-0">
+                &copy; 2026 Brand Design. Elegantly crafted via Bootstrap.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>
