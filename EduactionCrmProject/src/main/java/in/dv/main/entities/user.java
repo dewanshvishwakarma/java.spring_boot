@@ -52,9 +52,5 @@ public class user {
 	}
 	public void setCity(String city) {
 		this.city = city;
-	}
-	
-	
-	
-	
+	}	
 }
