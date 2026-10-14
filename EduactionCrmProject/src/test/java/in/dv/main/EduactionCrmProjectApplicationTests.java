@@ -1,4 +1,5 @@
 package in.dv.main;
+//application stater in java
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
