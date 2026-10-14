@@ -1,7 +1,7 @@
 package in.dv.main;
 
 //main folder is here 
-//used to run spring web application 
+//used to run
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
