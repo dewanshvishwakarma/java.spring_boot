@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
+// generate getter and setter
 public interface UserRepository extends JpaRepository< User, Long> {
 
 		Optional<User> findByEmail(String email);
